@@ -60,9 +60,10 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.event.inputs.test_pypi == 'true' && 'test-pypi' || 'pypi' }}
-      url: ${{ github.event.inputs.test_pypi == 'true' && 'https://test.pypi.org/p/crashlens' || 'https://pypi.org/p/crashlens' }}
+      url: ${{ github.event.inputs.test_pypi == 'true' && 'https://test.pypi.org/p/crashlens-detector' || 'https://pypi.org/p/crashlens-detector' }}
     permissions:
       id-token: write  # Mandatory for trusted publishing
+      contents: read
 
     steps:
       - name: Download build artifacts

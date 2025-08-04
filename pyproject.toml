@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "crashlens"
+name = "crashlens-detector"
 version = "1.2.0"
 description = "CLI to detect GPT token waste from Langfuse logs"
 authors = ["Aditya Singh <coding103856@gmail.com>"]
