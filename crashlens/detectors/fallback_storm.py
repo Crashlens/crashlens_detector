@@ -101,6 +101,7 @@ class FallbackStormDetector:
             'description': f"Fallback storm: {len(unique_models)} models used in {len(sorted_records)} calls",
             'models_used': unique_models,
             'num_calls': len(sorted_records),
+            'fallback_count': len(sorted_records),  # Add this for test compatibility
             'estimated_waste_usd': estimated_waste,
             'waste_cost': estimated_waste,
             'waste_tokens': total_tokens,
