@@ -1,4 +1,4 @@
-🚨 *CrashLens Token Waste Report* 🚨
+🚨 *Crashens Detector Token Waste Report* 🚨
 📊 *Analysis Date:* 2025-08-04 22:59:53
 
 📋 *Report Summary:*

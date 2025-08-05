@@ -1,5 +1,5 @@
 """
-CrashLens - Token Waste Detection Tool
+Crashens Detector - Token Waste Detection Tool
 Scans Langfuse-style JSONL logs for inefficient GPT API usage patterns.
 """
 

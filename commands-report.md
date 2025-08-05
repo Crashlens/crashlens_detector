@@ -1,7 +1,7 @@
-# CrashLens Commands Report
+# Crashens Detector Commands Report
 
 ## Overview
-CrashLens is a production-grade CLI tool for detecting token waste in GPT API logs. It analyzes Langfuse-style JSONL logs to identify inefficient usage patterns and provides cost optimization recommendations.
+Crashens Detector is a production-grade CLI tool for detecting token waste in GPT API logs. It analyzes Langfuse-style JSONL logs to identify inefficient usage patterns and provides cost optimization recommendations.
 
 **Version:** 0.1.0 (Enhanced v1.2)  
 **Architecture:** Production-grade with suppression engine, cost estimation, and budget enforcement
@@ -15,7 +15,7 @@ CrashLens is a production-grade CLI tool for detecting token waste in GPT API lo
 python -m crashlens [OPTIONS] COMMAND [ARGS]...
 ```
 
-**Description:** CrashLens - Detect token waste in GPT API logs
+**Description:** Crashens Detector - Detect token waste in GPT API logs
 
 **Global Options:**
 - `--version` - Show the version and exit
@@ -256,7 +256,7 @@ python -m crashlens --version
 ```
 Usage: python -m crashlens [OPTIONS] COMMAND [ARGS]...
 
-  CrashLens - Detect token waste in GPT API logs
+  Crashens Detector - Detect token waste in GPT API logs
 
 Options:
   --version  Show the version and exit.
@@ -287,4 +287,4 @@ Commands:
 
 ---
 
-This report covers all available commands and functionality in CrashLens v1.2 Enhanced. The tool provides production-grade token waste detection with sophisticated suppression logic, accurate cost estimation, and flexible output formatting.
+This report covers all available commands and functionality in Crashens Detector v1.2 Enhanced. The tool provides production-grade token waste detection with sophisticated suppression logic, accurate cost estimation, and flexible output formatting.

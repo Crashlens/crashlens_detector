@@ -1,7 +1,7 @@
-## 🧠 What is CrashLens?
+## 🧠 What is Crashens Detector?
 
 
-CrashLens is a developer tool to **analyze GPT API logs** and uncover hidden **token waste**, retry loops, and overkill model usage. It helps you **optimize your OpenAI, Anthropic, or Langfuse API usage** by generating a cost breakdown and **suggesting cost-saving actions**.
+Crashens Detector is a developer tool to **analyze GPT API logs** and uncover hidden **token waste**, retry loops, and overkill model usage. It helps you **optimize your OpenAI, Anthropic, or Langfuse API usage** by generating a cost breakdown and **suggesting cost-saving actions**.
 
 #### 🔍 Use it when you want to:
 
@@ -15,10 +15,10 @@ CrashLens is a developer tool to **analyze GPT API logs** and uncover hidden **t
 
 ---
 
-### 💡 Why use CrashLens?
+### 💡 Why use Crashens Detector?
 
 > "You can't optimize what you can't see."
-> CrashLens gives you visibility into how you're *actually* using LLMs — and how much it's costing you.
+> Crashens Detector gives you visibility into how you're *actually* using LLMs — and how much it's costing you.
 
 ---
 
@@ -37,7 +37,7 @@ CrashLens is a developer tool to **analyze GPT API logs** and uncover hidden **t
 ## TL;DR
 
 ```sh
-pip install crashlens
+pip install crashlens-detector
 crashlens scan path/to/your-logs.jsonl
 # Generates report.md with per-trace waste, cost, and suggestions
 ```
@@ -46,7 +46,7 @@ crashlens scan path/to/your-logs.jsonl
 
 ## ⚠️ Python Requirement
 
-CrashLens requires **Python 3.12 or higher**. [Download Python 3.12+ here.](https://www.python.org/downloads/)
+Crashens Detector requires **Python 3.12 or higher**. [Download Python 3.12+ here.](https://www.python.org/downloads/)
 
 ---
 
@@ -55,7 +55,7 @@ CrashLens requires **Python 3.12 or higher**. [Download Python 3.12+ here.](http
 If you see a warning like:
 
 ```
-WARNING: The script crashlens.exe is installed in 'C:\Users\<user>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts' which is not on PATH.
+WARNING: The script crashlens-detector.exe is installed in 'C:\Users\<user>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts' which is not on PATH.
 Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
 ```
 
@@ -69,17 +69,17 @@ This means the `crashlens` command may not work from any folder until you add th
 5. Click "New" and paste the Scripts path.
 6. Click OK to save. Restart your terminal/command prompt.
 
-Now you can run `crashlens` from any folder.
+Now you can run `crashlens-detector` from any folder.
 
 ---
 
-**CrashLens** analyzes your logs for patterns like fallback failures, retry loops, and overkill model usage, and generates a detailed Markdown report (`report.md`) with cost breakdowns and actionable insights.
+**Crashens Detector** analyzes your logs for patterns like fallback failures, retry loops, and overkill model usage, and generates a detailed Markdown report (`report.md`) with cost breakdowns and actionable insights.
 
-## 📝 Example CrashLens Report
+## 📝 Example Crashens Detector Report
 
-Below is a sample of what the actual `report.md` looks like after running CrashLens:
+Below is a sample of what the actual `report.md` looks like after running Crashens Detector:
 
-🚨 **CrashLens Token Waste Report** 🚨
+🚨 **Crashens Detector Token Waste Report** 🚨
 📊 Analysis Date: 2025-07-31 15:24:48
 
 | Metric | Value |
@@ -149,7 +149,7 @@ cd crashlens
 
 ## 2. Install Python & Poetry
 
-CrashLens requires **Python 3.8+** and [Poetry](https://python-poetry.org/) for dependency management.
+Crashens Detector requires **Python 3.8+** and [Poetry](https://python-poetry.org/) for dependency management.
 
 ### MacOS
 - Install Python (if not already):
@@ -218,9 +218,9 @@ To activate the environment :
 
 ---
 
-## 4. Running CrashLens
+## 4. Running Crashens Detector
 
-You can run CrashLens via Poetry or as a Python module:
+You can run Crashens Detector via Poetry or as a Python module:
 
 ### Basic Scan (from file)
 ```sh
@@ -232,7 +232,7 @@ crashlens scan examples/retry-test.jsonl
 crashlens scan --demo
 
 ```
-🚨 **CrashLens Token Waste Report** 🚨
+🚨 **Crashens Detector Token Waste Report** 🚨
 📊 Analysis Date: 2025-07-31 15:22:08
 
 | Metric | Value |
@@ -275,12 +275,12 @@ crashlens scan --demo
 
 ---
 
-## Why CrashLens? (vs. grep + Excel, LangSmith, or basic logging)
+## Why Crashens Detector? (vs. grep + Excel, LangSmith, or basic logging)
 
 - 🔁 **grep + spreadsheet**: Too manual, error-prone, no cost context
 - 💸 **LangSmith**: Powerful but complex, requires full tracing/observability stack
 - 🔍 **Logging without cost visibility**: You miss $ waste and optimization opportunities
-- 🔒 **CrashLens runs 100% locally—no data leaves your machine.**
+- 🔒 **Crashens Detector runs 100% locally—no data leaves your machine.**
 
 ---
 
@@ -293,7 +293,7 @@ crashlens scan --demo
 
 ---
 
-## What Makes CrashLens Different?
+## What Makes Crashens Detector Different?
 
 - 💵 **Model pricing fallback** (auto-detects/corrects missing cost info)
 - 🔒 **Security-by-design** (runs 100% locally, no API calls, no data leaves your machine)
@@ -322,7 +322,7 @@ crashlens scan --demo
 - `cost` (float): Cost of the API call
 - `name`, `startTime`, etc.: Any other metadata
 
-💡 CrashLens expects JSONL with per-call metrics (model, tokens, cost). Works with LangChain logs, OpenAI api.log, Claude, Gemini, and more.
+💡 Crashens Detector expects JSONL with per-call metrics (model, tokens, cost). Works with LangChain logs, OpenAI api.log, Claude, Gemini, and more.
 
 ---
 
@@ -387,7 +387,7 @@ crashlens scan --help
 
 ## 🧩 Example Workflow
 
-1. **Install CrashLens:**
+1. **Install Crashens Detector:**
    ```sh
    pip install crashlens
    # OR clone and install from source as above
@@ -404,7 +404,7 @@ crashlens scan --help
 
 ## 📝 Logging Helper
 
-To make log analysis seamless, you can use our [`crashlens-logger`](https://github.com/Crashlens/logger) package to emit logs in the correct structure for CrashLens. This ensures compatibility and reduces manual formatting.
+To make log analysis seamless, you can use our [`crashlens-logger`](https://github.com/Crashlens/logger) package to emit logs in the correct structure for Crashens Detector. This ensures compatibility and reduces manual formatting.
 
 **Example usage:**
 ```sh
@@ -443,7 +443,7 @@ logger.log_event(
 
 ### **Alternative: Install from Source (GitHub)**
 
-If you want the latest development version or want to contribute, you can install CrashLens from source:
+If you want the latest development version or want to contribute, you can install Crashens Detector from source:
 
 1. **Clone the repository:**
    ```sh
@@ -467,7 +467,7 @@ If you want the latest development version or want to contribute, you can instal
    # Or, if using Poetry:
    poetry install
    ```
-4. **Run CrashLens:**
+4. **Run Crashens Detector:**
    ```sh
    python -m crashlens scan path/to/your-logs.jsonl
    # Or, if using Poetry:
@@ -486,7 +486,7 @@ MIT License - see LICENSE file for details.
 
 ---
 
-**CrashLens: Find your wasted tokens. Save money. Optimize your AI usage.** 
+**Crashens Detector: Find your wasted tokens. Save money. Optimize your AI usage.** 
 
 ### Scan from stdin (pipe or paste)
 ```sh
@@ -497,11 +497,11 @@ cat examples/retry-test.jsonl | poetry run crashlens scan --stdin
 
 ## 5. Output: The Markdown Report
 
-After every scan, CrashLens creates or updates `report.md` in your current directory.
+After every scan, Crashens Detector creates or updates `report.md` in your current directory.
 
 ### Example Structure
 ```
-# CrashLens Token Waste Report
+# Crashens Detector Token Waste Report
 
 🧾 **Total AI Spend**: $0.123456
 💰 **Total Potential Savings**: $0.045678
@@ -593,7 +593,7 @@ crashlens scan --summary-only
 | `--help` | Show help message | `crashlens scan --help` |
 
 ### 📂 Detailed Reports
-When using `--detailed`, CrashLens generates grouped category files:
+When using `--detailed`, Crashens Detector generates grouped category files:
 - `detailed_output/fallback_failure.json` - All fallback failure issues
 - `detailed_output/retry_loop.json` - All retry loop issues  
 - `detailed_output/fallback_storm.json` - All fallback storm issues
@@ -605,7 +605,7 @@ Each file contains:
 - Specific suggestions for that category
 
 ### 🔍 Input Sources
-CrashLens supports multiple input methods:
+Crashens Detector supports multiple input methods:
 
 1. **File input**: `crashlens scan path/to/logs.jsonl`
 2. **Demo mode**: `crashlens scan --demo` (requires examples-logs/demo-logs.jsonl file)
@@ -618,7 +618,7 @@ CrashLens supports multiple input methods:
 - **json**: Machine-readable JSON for automation
 
 ### 💡 Pro Tips
-- Use `--demo` to test CrashLens without your own logs
+- Use `--demo` to test Crashens Detector without your own logs
 - Use `--detailed` to get actionable JSON reports for each issue category
 - Use `--summary-only` for executive summaries without trace details
 - Combine `--stdin` with shell pipelines for automation
@@ -630,5 +630,5 @@ For questions, issues, or feature requests, open an issue on GitHub or contact t
 
 ---
 
-Enjoy using CrashLens! 🎯 
+Enjoy using Crashens Detector! 🎯 
 

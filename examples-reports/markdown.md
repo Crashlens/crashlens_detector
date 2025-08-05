@@ -1,6 +1,6 @@
-🔒 CrashLens runs 100% locally. No data leaves your system.
+🔒 Crashens Detector runs 100% locally. No data leaves your system.
 
-# CrashLens Token Waste Report
+# Crashens Detector Token Waste Report
 
 **Analysis Date:** 2025-07-31 22:11:51  
 

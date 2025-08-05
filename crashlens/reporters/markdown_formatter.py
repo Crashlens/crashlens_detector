@@ -25,10 +25,10 @@ class MarkdownFormatter:
             return "**No token waste patterns detected! Your GPT usage looks efficient.**"
         
         output = []
-        output.append("🔒 CrashLens runs 100% locally. No data leaves your system.\n")
+        output.append("🔒 Crashens Detector runs 100% locally. No data leaves your system.\n")
         if summary_only:
             output.append("> **Summary-only mode:** Prompts, sample inputs, and trace IDs are suppressed for safe internal sharing.\n")
-        output.append("# CrashLens Token Waste Report")
+        output.append("# Crashens Detector Token Waste Report")
         output.append("")
         
         # Add analysis metadata

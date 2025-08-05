@@ -1,1 +1,1 @@
-# Tests package for CrashLens 
+# Tests package for Crashens Detector 

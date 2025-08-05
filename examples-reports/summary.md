@@ -1,6 +1,6 @@
-🔒 CrashLens runs 100% locally. No data leaves your system.
+🔒 Crashens Detector runs 100% locally. No data leaves your system.
 📝 Summary mode: Trace IDs are suppressed for safe internal sharing.
-📊 CrashLens Summary – 2025-07-31 22:32:00 | Traces: 12 | Cost: $0.09 | Tokens: 3,504
+📊 Crashens Detector Summary – 2025-07-31 22:32:00 | Traces: 12 | Cost: $0.09 | Tokens: 3,504
 
 🤖 **Model Breakdown**
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CrashLens CLI - Token Waste Detection Tool
+Crashens Detector CLI - Token Waste Detection Tool
 Scans Langfuse-style JSONL logs for inefficient GPT API usage patterns.
 Production-grade suppression and priority logic for accurate root cause attribution.
 """
@@ -389,7 +389,7 @@ def _calculate_trace_time_span(records: List[Dict[str, Any]]) -> float:
 @click.group()
 @click.version_option(version="0.1.0")
 def cli():
-    """CrashLens - Detect token waste in GPT API logs with production-grade suppression"""
+    """Crashens Detector - Detect token waste in GPT API logs with production-grade suppression"""
     pass
 
 

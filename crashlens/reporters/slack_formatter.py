@@ -1,5 +1,5 @@
 """
-CrashLens FinOps Formatter
+Crashens Detector FinOps Formatter
 Compact, scannable forma         # Compact header with key metrics
         output.append(f"📊 CrashLe                    trace_lines.append(f"{i}. {trace_id} → {model} → {cost_str}")
             
@@ -44,7 +44,7 @@ class SlackFormatter:
     def format(self, detections: List[Dict[str, Any]], traces: Dict[str, List[Dict[str, Any]]], model_pricing: Optional[Dict[str, Any]] = None, summary_only: bool = False, include_json_footer: bool = False) -> str:
         """Format detections in FinOps-focused compact format"""
         if not detections:
-            return "🔒 CrashLens runs 100% locally. No data leaves your system.\n\n✅ *No token waste patterns detected!* Your GPT usage looks efficient. 🎉"
+            return "🔒 Crashens Detector runs 100% locally. No data leaves your system.\n\n✅ *No token waste patterns detected!* Your GPT usage looks efficient. 🎉"
         
         # Calculate costs and metrics
         total_ai_spend = self._calculate_total_ai_spend(traces, model_pricing)
@@ -58,12 +58,12 @@ class SlackFormatter:
         
         output = []
         if summary_only:
-            output.append("🔒 CrashLens runs 100% locally. No data leaves your system.")
+            output.append("🔒 Crashens Detector runs 100% locally. No data leaves your system.")
             output.append("📝 *Summary-only mode:* Prompts, sample inputs, and trace IDs are suppressed for safe internal sharing.")
             output.append("")
         
         # Enhanced header with Slack-native formatting
-        output.append(f"🚨 *CrashLens Token Waste Report* 🚨")
+        output.append(f"🚨 *Crashens Detector Token Waste Report* 🚨")
         output.append(f"📊 *Analysis Date:* {timestamp}")
         output.append("")
         

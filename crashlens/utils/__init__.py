@@ -1,5 +1,5 @@
 """
-Utility modules for CrashLens
+Utility modules for Crashens Detector
 """
 
 from .pii_scrubber import PIIScrubber

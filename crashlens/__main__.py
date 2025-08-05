@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CrashLens CLI Entry Point
+Crashens Detector CLI Entry Point
 Imports and runs the main CLI from cli.py to avoid code duplication.
 """
 

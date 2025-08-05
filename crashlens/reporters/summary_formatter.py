@@ -18,7 +18,7 @@ class SummaryFormatter:
     def format(self, traces: Dict[str, List[Dict[str, Any]]], model_pricing: Dict[str, Any], summary_only: bool = False, detections: Optional[List[Dict[str, Any]]] = None) -> str:
         """Format cost summary from traces using compact FinOps format with waste analysis"""
         if not traces:
-            return "🔒 CrashLens runs 100% locally. No data leaves your system.\nℹ️  No traces found for summary"
+            return "🔒 Crashens Detector runs 100% locally. No data leaves your system.\nℹ️  No traces found for summary"
         
         # For summary-only mode, create ultra-concise 2-3 line report
         if summary_only:
@@ -26,7 +26,7 @@ class SummaryFormatter:
         
         # Regular summary mode - detailed format
         output = []
-        output.append("🔒 CrashLens runs 100% locally. No data leaves your system.")
+        output.append("🔒 Crashens Detector runs 100% locally. No data leaves your system.")
         output.append("📝 Summary mode: Trace IDs are suppressed for safe internal sharing.")
         
         # Calculate totals first
@@ -58,9 +58,9 @@ class SummaryFormatter:
         
         # Only show tokens if we have a meaningful count, otherwise suppress the field
         if total_tokens > 0:
-            output.append(f"📊 CrashLens Summary – {timestamp} | Traces: {len(traces)} | Cost: {cost_str} | Tokens: {total_tokens:,}")
+            output.append(f"📊 Crashens Detector Summary – {timestamp} | Traces: {len(traces)} | Cost: {cost_str} | Tokens: {total_tokens:,}")
         else:
-            output.append(f"📊 CrashLens Summary – {timestamp} | Traces: {len(traces)} | Cost: {cost_str}")
+            output.append(f"📊 Crashens Detector Summary – {timestamp} | Traces: {len(traces)} | Cost: {cost_str}")
         output.append("")
         
         # Model breakdown - table format

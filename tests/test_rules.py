@@ -1,5 +1,5 @@
 """
-Tests for CrashLens detection rules
+Tests for Crashens Detector detection rules
 """
 
 import unittest
