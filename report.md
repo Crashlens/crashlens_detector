@@ -1,78 +1,29 @@
-🔒 Crashens Detector runs 100% locally. No data leaves your system.
+🚨 *Crashens Detector Token Waste Report* 🚨
+📊 *Analysis Date:* 2025-08-10 06:47:20
 
-# Crashens Detector Token Waste Report
+📋 *Report Summary:*
+• 💰 *Total AI Spend:* $859.52
+• 🔥 *Potential Savings:* $859.52
+• 🎯 *Wasted Tokens:* 24,555,498
+• ⚠️ *Issues Found:* 187
+• 📈 *Traces Analyzed:* 156
 
-**Analysis Date:** 2025-08-10 05:40:31  
-
-**Traces Analyzed:** 12  
-
-
-## Summary
-
-| Metric | Value |
-|--------|-------|
-| Total AI Spend | $0.09 |
-| Total Potential Savings | $0.07 |
-| Wasted Tokens | 1,414 |
-| Issues Found | 8 |
-| Traces Analyzed | 12 |
-
-## Retry Loop (1 issues)
-
-| Metric | Value |
-|--------|-------|
-| Total Waste Cost | $0.0002 |
-| Total Waste Tokens | 108 |
-
-**Trace IDs**:
-`demo_retry_01`
-
-**Issue**: 1 traces flagged by Retry Loop
+🔄 *Retry Loop* • 187 traces • $859.52 wasted
+   💡 *Fix:* exponential backoff
+   🎯 *Wasted tokens:* 24,555,498
+   🔗 *Traces (156):* `trace_norm_01, trace_overkill_01, trace_norm_02, trace_retry_loop_01, trace_norm_03, +151 more`
 
 
-## Fallback Failure (5 issues)
+🏆 *Top Expensive Traces:*
+• #1 → `trace_norm_76` → gpt-4 → $65.78
+• #2 → `trace_norm_65` → gpt-4 → $52.60
+• #3 → `trace_norm_38` → gpt-4 → $44.10
 
-| Metric | Value |
-|--------|-------|
-| Total Waste Cost | $0.0728 |
-| Total Waste Tokens | 1,275 |
+🤖 *Cost by Model:*
+• gpt-4 → $845.65 (98%)
+• gpt-3.5-turbo → $13.87 (2%)
 
-**Trace IDs**:
-`demo_fallback_01, demo_fallback_02, demo_fallback_03, demo_fallback_04, demo_fallback_05`
-
-**Issue**: 5 traces flagged by Fallback Failure
-
-
-## Overkill Model (2 issues)
-
-| Metric | Value |
-|--------|-------|
-| Total Waste Cost | $0.0007 |
-| Total Waste Tokens | 31 |
-
-**Trace IDs**:
-`demo_overkill_01, demo_overkill_02`
-
-**Issue**: 2 traces flagged by Overkill Model
-
-
-## Top Expensive Traces
-
-| Rank | Trace ID | Model | Cost |
-|------|----------|-------|------|
-| 1 | demo_norm_03 | gpt-4 | $0.03 |
-| 2 | demo_norm_04 | gpt-4 | $0.02 |
-| 3 | demo_fallback_05 | gpt-3.5-turbo | $0.02 |
-
-## Cost by Model
-
-| Model | Cost | Percentage |
-|-------|------|------------|
-| gpt-4 | $0.09 | 99% |
-| gpt-3.5-turbo | $0.0012 | 1% |
-
-## Next Steps
-
-- Run `crashlens --detailed` for grouped JSON reports
-- Review trace patterns to optimize model routing
-- Implement suggested fixes to reduce token waste
+💡 *Next Steps:*
+• Run `crashlens --detailed` for grouped JSON reports
+• Review trace patterns to optimize model routing
+• Implement suggested fixes to reduce token waste
