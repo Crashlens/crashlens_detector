@@ -9,4 +9,4 @@ __email__ = "your.email@example.com"
 
 from .cli import cli
 
-__all__ = ["cli"] 
+__all__ = ["cli"]

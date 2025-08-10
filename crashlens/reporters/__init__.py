@@ -1,1 +1,1 @@
-# Reporters package for Crashens Detector 
+# Reporters package for Crashens Detector

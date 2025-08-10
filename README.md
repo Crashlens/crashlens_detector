@@ -625,10 +625,77 @@ Crashens Detector supports multiple input methods:
 
 ---
 
-## 8. Support
-For questions, issues, or feature requests, open an issue on GitHub or contact the maintainer.
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](.github/CONTRIBUTING.md) for details.
+
+### Quick Start for Contributors
+
+1. **Fork and clone the repository**
+2. **Set up development environment**:
+   ```bash
+   poetry install
+   ```
+3. **Run tests**:
+   ```bash
+   poetry run pytest
+   ```
+4. **Run linting**:
+   ```bash
+   poetry run black crashlens/ tests/
+   poetry run flake8 crashlens/ tests/
+   ```
+5. **Test CLI**:
+   ```bash
+   poetry run crashlens scan examples-logs/demo-logs.jsonl
+   ```
+
+### Development Requirements
+
+- **Python 3.12+**
+- **Poetry** for dependency management
+- **Black** for code formatting
+- **Flake8** for linting
+- **Pytest** for testing
+- **MyPy** for type checking (optional)
+
+### Branch Protection & CI
+
+This repository uses branch protection rules that require:
+- ✅ Pull request reviews before merging
+- ✅ Status checks to pass (CI tests, linting, etc.)
+- ✅ Conversations resolved before merging
+- ✅ Branch up-to-date before merging
+
+All contributions must:
+- Pass automated tests
+- Follow code style guidelines
+- Include appropriate documentation
+- Be submitted via pull request (no direct pushes to main)
+
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for detailed contribution guidelines.
 
 ---
 
-Enjoy using Crashens Detector! 🎯 
+## 🔒 Security
+
+For security issues, please see our [Security Policy](SECURITY.md).
+
+---
+
+## 8. Support
+
+- 💬 **Questions**: Use [GitHub Discussions](https://github.com/Crashlens/crashlens-detector/discussions)
+- 🐛 **Bug Reports**: Open a [GitHub Issue](https://github.com/Crashlens/crashlens-detector/issues)
+- 📧 **Private Issues**: Contact security@crashlens.dev
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+**Crashlens Detector: Find your wasted tokens. Save money. Optimize your AI usage.** 🎯 
 

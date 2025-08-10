@@ -1,1 +1,1 @@
-# Parsers package for Crashens Detector 
+# Parsers package for Crashens Detector

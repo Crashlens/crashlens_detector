@@ -1,0 +1,36 @@
+# Code Owners for Crashlens Detector
+# This file defines who owns different parts of the codebase
+# and automatically requests reviews from the appropriate people
+
+# Global ownership - all files
+* @Crashlens
+
+# CLI and core functionality
+crashlens/cli.py @Crashlens
+crashlens/__main__.py @Crashlens
+
+# Detectors - critical logic
+crashlens/detectors/ @Crashlens
+
+# Configuration files
+crashlens/config/ @Crashlens
+*.yaml @Crashlens
+*.yml @Crashlens
+
+# Tests - ensure quality
+tests/ @Crashlens
+
+# Documentation
+*.md @Crashlens
+docs/ @Crashlens
+
+# GitHub workflows and templates
+.github/ @Crashlens
+
+# Package configuration
+pyproject.toml @Crashlens
+poetry.lock @Crashlens
+
+# License and security
+LICENSE @Crashlens
+SECURITY.md @Crashlens
