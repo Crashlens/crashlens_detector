@@ -1,5 +1,5 @@
 🚨 *Crashens Detector Token Waste Report* 🚨
-📊 *Analysis Date:* 2025-08-10 06:47:20
+📊 *Analysis Date:* 2025-08-15 01:35:56
 
 📋 *Report Summary:*
 • 💰 *Total AI Spend:* $859.52
