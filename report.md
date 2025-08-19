@@ -1,29 +1,30 @@
-🚨 *Crashens Detector Token Waste Report* 🚨
-📊 *Analysis Date:* 2025-08-15 01:35:56
+🔒 Crashens Detector runs 100% locally. No data leaves your system.
+📝 Summary mode: Trace IDs are suppressed for safe internal sharing.
+📊 Crashens Detector Summary – 2025-08-20 00:50:37 | Traces: 12 | Cost: $0.09 | Tokens: 3,504
 
-📋 *Report Summary:*
-• 💰 *Total AI Spend:* $859.52
-• 🔥 *Potential Savings:* $859.52
-• 🎯 *Wasted Tokens:* 24,555,498
-• ⚠️ *Issues Found:* 187
-• 📈 *Traces Analyzed:* 156
+🤖 **Model Breakdown**
 
-🔄 *Retry Loop* • 187 traces • $859.52 wasted
-   💡 *Fix:* exponential backoff
-   🎯 *Wasted tokens:* 24,555,498
-   🔗 *Traces (156):* `trace_norm_01, trace_overkill_01, trace_norm_02, trace_retry_loop_01, trace_norm_03, +151 more`
+| Model | Cost | Percentage |
+|-------|------|------------|
+| gpt-4 | $0.09 | 99% |
+| gpt-3.5-turbo | $0.0012 | 1% |
+
+🏆 **Top Expensive Traces**
+
+| Rank | Model | Cost |
+|------|-------|------|
+| #1 | gpt-4 | $0.03 |
+| #2 | gpt-4 | $0.02 |
+| #3 | gpt-3.5-turbo | $0.02 |
+| #4 | gpt-3.5-turbo | $0.0070 |
+| #5 | gpt-3.5-turbo | $0.0059 |
 
 
-🏆 *Top Expensive Traces:*
-• #1 → `trace_norm_76` → gpt-4 → $65.78
-• #2 → `trace_norm_65` → gpt-4 → $52.60
-• #3 → `trace_norm_38` → gpt-4 → $44.10
+🚨 **Waste Analysis**
 
-🤖 *Cost by Model:*
-• gpt-4 → $845.65 (98%)
-• gpt-3.5-turbo → $13.87 (2%)
-
-💡 *Next Steps:*
-• Run `crashlens --detailed` for grouped JSON reports
-• Review trace patterns to optimize model routing
-• Implement suggested fixes to reduce token waste
+| Issue Type | Count | Cost | Tokens |
+|------------|-------|------|--------|
+| 🔄 Retry Loops | 1 | $0.0002 | 108 |
+| 📢 Fallback Failures | 1 | $0.0098 | 175 |
+| ❓ Overkill Models | 1 | $0.0003 | 13 |
+| **Total** | **3** | **$0.0102** | **296** |

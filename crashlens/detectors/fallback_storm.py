@@ -54,6 +54,9 @@ class FallbackStormDetector:
             detection = self._check_storm_pattern(trace_id, records, model_pricing)
             if detection:
                 detections.append(detection)
+                # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+                # No need to check other traces since we've already flagged this one
+                break
 
         return detections
 

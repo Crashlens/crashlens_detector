@@ -656,17 +656,23 @@ def scan(
         ]
 
         # Process each detector
+        flagged_traces = set()  # Track traces that have been flagged by any detector
+        
         for detector_name, detector in detector_configs:
             try:
                 if hasattr(detector, "detect"):
                     if "already_flagged_ids" in detector.detect.__code__.co_varnames:
-                        already_flagged = set(suppression_engine.trace_ownership.keys())
+                        # Detector supports suppression - pass both already flagged and newly flagged traces
+                        already_flagged = set(suppression_engine.trace_ownership.keys()) | flagged_traces
                         raw_detections = detector.detect(
                             traces, pricing_config.get("models", {}), already_flagged
                         )
                     else:
+                        # Basic detector - filter traces to only unflagged ones
+                        unflagged_traces = {trace_id: trace_records for trace_id, trace_records in traces.items() 
+                                          if trace_id not in flagged_traces}
                         raw_detections = detector.detect(
-                            traces, pricing_config.get("models", {})
+                            unflagged_traces, pricing_config.get("models", {})
                         )
                 else:
                     raw_detections = []
@@ -676,6 +682,11 @@ def scan(
                     detector_name, raw_detections
                 )
                 all_active_detections.extend(active_detections)
+                
+                # Update flagged traces set with newly flagged traces
+                for detection in active_detections:
+                    if "trace_id" in detection:
+                        flagged_traces.add(detection["trace_id"])
 
             except Exception as e:
                 click.echo(f"⚠️  Warning: {detector_name} failed: {e}", err=True)
@@ -749,22 +760,25 @@ def scan(
     ]
 
     all_active_detections = []
+    flagged_traces = set()  # Track traces that have been flagged by any detector
 
     # Process each detector in priority order
     for detector_name, detector in detector_configs:
         try:
-            # Run detector
+            # Run detector with lazy evaluation - only process unflagged traces
             if hasattr(detector, "detect"):
                 if "already_flagged_ids" in detector.detect.__code__.co_varnames:
-                    # Detector supports suppression
-                    already_flagged = set(suppression_engine.trace_ownership.keys())
+                    # Detector supports suppression - pass both already flagged and newly flagged traces
+                    already_flagged = set(suppression_engine.trace_ownership.keys()) | flagged_traces
                     raw_detections = detector.detect(
                         traces, pricing_config.get("models", {}), already_flagged
                     )
                 else:
-                    # Basic detector
+                    # Basic detector - filter traces to only unflagged ones
+                    unflagged_traces = {trace_id: trace_records for trace_id, trace_records in traces.items() 
+                                      if trace_id not in flagged_traces}
                     raw_detections = detector.detect(
-                        traces, pricing_config.get("models", {})
+                        unflagged_traces, pricing_config.get("models", {})
                     )
             else:
                 raw_detections = []
@@ -774,6 +788,11 @@ def scan(
                 detector_name, raw_detections
             )
             all_active_detections.extend(active_detections)
+            
+            # Update flagged traces set with newly flagged traces
+            for detection in active_detections:
+                if "trace_id" in detection:
+                    flagged_traces.add(detection["trace_id"])
 
         except Exception as e:
             click.echo(f"⚠️  Warning: {detector_name} failed: {e}", err=True)

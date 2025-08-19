@@ -80,24 +80,13 @@ class OverkillModelDetector:
         model_pricing: Optional[Dict[str, Any]] = None,
         already_flagged_ids: Optional[set] = None,
     ) -> List[Dict[str, Any]]:
-        """
-        Detect overkill model usage with enhanced cost estimation and routing suggestions
-
-        Args:
-            traces: Dictionary of trace_id -> list of records
-            model_pricing: Pricing configuration for cost estimation
-            already_flagged_ids: Set of trace IDs already claimed by higher-priority detectors
-
-        Returns:
-            List of detection results with cost estimates and routing suggestions
-        """
+        """Detect overkill model usage across all traces"""
+        detections = []
         if already_flagged_ids is None:
             already_flagged_ids = set()
 
-        detections = []
-
         for trace_id, records in traces.items():
-            # Skip traces already claimed by higher-priority detectors
+            # Skip if trace is already flagged by higher-priority detectors
             if trace_id in already_flagged_ids:
                 continue
 
@@ -107,6 +96,14 @@ class OverkillModelDetector:
                 )
                 if detection:
                     detections.append(detection)
+                    # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+                    # No need to check other records in this trace since we've already flagged it
+                    break
+            
+            # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+            # No need to check other traces since we've already flagged this one
+            if detections:
+                break
 
         return detections
 

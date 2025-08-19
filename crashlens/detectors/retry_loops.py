@@ -122,6 +122,15 @@ class RetryLoopDetector:
                         "records": group,
                     }
                     detections.append(detection)
+                    
+                    # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+                    # No need to check other groups in this trace since we've already flagged it
+                    break
+            
+            # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+            # No need to check other traces since we've already flagged this one
+            if detections:
+                break
 
         return detections
 

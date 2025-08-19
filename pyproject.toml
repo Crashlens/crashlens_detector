@@ -11,9 +11,6 @@ packages = [{include = "crashlens"}]
 python = "^3.12"
 click = "^8.2.1"
 pyyaml = "^6.0.2"
-jinja2 = "^3.1.6"
-rich = "^14.0.0"
-orjson = "^3.10.18"
 pyperclip = "^1.8.2"
 
 [tool.poetry.group.dev.dependencies]

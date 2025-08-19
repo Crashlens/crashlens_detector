@@ -62,6 +62,15 @@ class FallbackFailureDetector:
             for failure in fallback_failures:
                 failure["trace_id"] = trace_id
                 detections.append(failure)
+                
+                # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+                # No need to check other failures in this trace since we've already flagged it
+                break
+            
+            # 🚀 LAZY EVALUATION: Exit early once we've flagged this trace
+            # No need to check other traces since we've already flagged this one
+            if detections:
+                break
 
         return [d for d in detections if d is not None]
 
